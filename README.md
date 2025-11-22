@@ -108,7 +108,7 @@ Para garantizar la funcionalidad del simulador con equipos o configuraciones ant
 * **Acción:** Comenta la línea `noload => chan_sip.so` (añadiendo un `;` al inicio o eliminándola).
 * **Resultado:** Permite que el módulo `chan_sip.so` se cargue al inicio, habilitando el soporte para troncales legacy.
 
-> ⚠️ **Importante:** Si necesitas migrar a PJSIP en el futuro, consulta la [documentación oficial de migración](https://docs.asterisk.org/Asterisk_20_Documentation/Migrating_from_chan_sip_to_res_pjsip/).
+> ⚠️ **Importante:** Si necesitas migrar a PJSIP en el futuro, consulta la [documentación oficialn](https://docs.asterisk.org/Asterisk_20_Documentation/).
 
 ---
 
@@ -132,7 +132,6 @@ Para garantizar la funcionalidad del simulador con equipos o configuraciones ant
 
 * **`/etc_asterisk`**: Contiene los archivos `.conf` vitales (`extensions.conf`, `sip.conf`, `modules.conf`, etc.).
 * **`/etc_fail2ban`**: Configuración de seguridad (`jail.local`).
-* **`/ejemplos`**: Archivos de ejemplo para que los alumnos configuren sus PBX.
 * **`deploy.sh`**: Script Bash que automatiza la instalación de repositorios, paquetes, permisos y configuraciones.
 
 ---
