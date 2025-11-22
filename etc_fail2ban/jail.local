@@ -1,0 +1,53 @@
+#
+# /etc/fail2ban/jail.local
+#
+# Este es tu archivo de configuración local. Los ajustes aquí tienen prioridad
+# sobre /etc/fail2ban/jail.conf.
+#
+
+# --- SECCIÓN [DEFAULT]: Ajustes globales para todas las jaulas ---
+
+[DEFAULT]
+
+# IPs a ignorar (localhost es fundamental). Puedes añadir tus propias IPs de confianza,
+# separadas por un espacio. Por ejemplo: "127.0.0.1/8 ::1 192.168.1.100"
+ignoreip = 127.0.0.1/8 ::1 186.104.203.137
+
+# Tiempo de baneo en segundos. 3600 = 1 hora.
+bantime  = 3600
+
+# Ventana de tiempo (en segundos) en la que se cuentan los intentos fallidos.
+findtime = 300
+
+# Número de intentos fallidos antes de banear.
+maxretry = 3
+
+# Acción de baneo. "firewallcmd-rich-rules" es la opción moderna y recomendada
+# para sistemas con firewalld.
+banaction = firewallcmd-rich-rules
+
+# --- SECCIÓN DE JAULAS ESPECÍFICAS ---
+
+# --- Protección para SSH ---
+
+[sshd]
+enabled = true
+# No es necesario especificar el puerto o el logpath si usas la configuración
+# estándar, ya que Fail2Ban lo detecta automáticamente.
+# Si usas un puerto SSH no estándar, descomenta y ajusta la siguiente línea:
+# port = 2222
+
+
+# --- Protección para Asterisk ---
+
+[asterisk]
+enabled  = true
+# Puertos estándar de señalización SIP (UDP/TCP) y SIPS (TLS).
+port     = 5060,5061
+# Apunta al log de seguridad de Asterisk.
+logpath  = /var/log/asterisk/security
+# Se recomienda un umbral de reintentos un poco más alto para VoIP.
+maxretry = 5
+# Se recomienda un tiempo de baneo mucho más largo para ataques de VoIP.
+# 86400 segundos = 24 horas.
+bantime  = 86400
