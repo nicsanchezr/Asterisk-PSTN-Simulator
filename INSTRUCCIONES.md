@@ -42,9 +42,9 @@ El sistema está diseñado para que cada grupo pueda probar sus configuraciones 
 
 ### 📊 Diagrama de Flujo
 
-    ┌─────────────┐         ┌──────────────┐         ┌─────────────┐
+    ┌─────────────┐         ┌──────────────┐          ┌─────────────┐
     │   PBX del   │────────▶│   Simulador  │────────▶│  Softphone  │
-    │    Grupo    │         │     PSTN     │         │  de Pruebas │
+    │    Grupo    │         │     PSTN     │          │  de Pruebas │
     └─────────────┘◀────────└──────────────┘◀────────└─────────────┘
          ▲                                                   │
          └───────────────────────────────────────────────────┘
@@ -365,19 +365,12 @@ Cuando el Softphone marca el DID propio del grupo:
 | iOS | [Linphone](https://apps.apple.com/app/linphone/id360065638) | Versión móvil |
 | Web | [JsSIP](https://tryit.jssip.net/) | Sin instalación |
 
-### 📁 Archivos de Configuración de Ejemplo
-
-Puedes encontrar ejemplos completos de configuración en la carpeta `/ejemplos`:
-
-- `sip.conf.example` - Configuración completa del troncal con chan_sip
-- `extensions.conf.example` - Dialplan con todos los casos
-- `rtp.conf.example` - Configuración de puertos RTP
 
 ### 📋 Requisitos del Sistema
 
 - **Asterisk:** Versión 20.15
 - **Módulos requeridos:** `chan_sip.so`
-- **Sistema Operativo:** Linux (Ubuntu 20.04+, Debian 11+, CentOS 8+)
+- **Sistema Operativo:** Linux (Ubuntu 20.04+, Debian 11+, CentOS 8+, Rocky Linux 9+)
 - **Puertos:** UDP 5060 (SIP), UDP 10000-20000 (RTP)
 
 ---
