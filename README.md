@@ -124,11 +124,9 @@ Para garantizar la funcionalidad del simulador con equipos o configuraciones ant
     │   ├── modules.conf             # Módulos cargados/deshabilitados
     │   ├── rtp.conf                 # Configuración de puertos RTP
     │   └── ...                      # Otros archivos .conf
-    ├── etc_fail2ban/                # Configuración de seguridad
-    │   └── jail.local               # Reglas de fail2ban
-    └── ejemplos/                    # Ejemplos de configuración
-        ├── sip.conf.example         # Ejemplo de troncal cliente
-        └── extensions.conf.example  # Ejemplo de dialplan cliente
+    └── etc_fail2ban/                # Configuración de seguridad
+        └── jail.local               # Reglas de fail2ban
+
 
 ### Descripción de Carpetas
 
